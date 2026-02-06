@@ -1,0 +1,3 @@
+Dataset: Superstore Sales Dataset
+Source: Kaggle (public dataset)
+Description: Retail sales data including orders, customers, products, sales, profit and discounts.
