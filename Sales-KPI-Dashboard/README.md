@@ -1,21 +1,21 @@
-## Business KPI & Sales Performance Dashboard
+## Sales KPI & Performance Analysis
 
-### Business Objective
-Analyze revenue, growth trends, and regional performance to support management decision-making.
-
-### Dataset
-- Superstore Sales Dataset (public dataset)
+### Objective
+To analyze retail sales performance and key business KPIs using SQL and Power BI.
 
 ### Tools Used
-- SQL
+- MySQL
 - Power BI
 - Excel
 
-### Key Analysis
-- Total revenue and growth trends
-- Region-wise sales performance
-- Top and bottom products
-- KPI tracking using DAX
+### Dataset
+Public Superstore sales dataset sourced from Kaggle.
 
-### Outcome
-Identified underperforming regions and seasonal sales patterns through interactive dashboards.
+### Work Done
+- Designed relational schema in MySQL
+- Imported CSV data into tables
+- Performed sales and profitability analysis using SQL
+- Prepared KPI metrics for dashboarding
+
+### Status
+Dashboard creation in progress.
