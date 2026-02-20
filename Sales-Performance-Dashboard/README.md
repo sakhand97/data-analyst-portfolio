@@ -14,7 +14,7 @@ The dashboard is designed using proper data modeling and time intelligence techn
 # 📄 Dashboard Structure
 
 ## 1️⃣ Executive Overview
-![Executive Overview](Executive_Overview.png)
+![Executive Overview](EXECUTIVE OVERVIEW.png)
 This page provides a high-level business summary.
 
 ### KPIs Included:
