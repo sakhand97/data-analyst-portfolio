@@ -1,32 +1,162 @@
-# 📊 Data Analyst Portfolio – Power BI Projects
+# 📊 Sales Analysis Dashboard – Power BI
 
-Welcome to my Data Analytics portfolio repository.  
-This repository contains end-to-end Power BI projects demonstrating data modeling, DAX, and business insight generation.
+## 🔍 Project Overview
+This Power BI project analyzes multi-year Superstore sales data and presents insights across three structured dashboard pages:
+
+1. Executive Overview  
+2. Profitability Deep Dive  
+3. Regional & Customer Insights  
+
+The dashboard is designed using proper data modeling and time intelligence techniques.
 
 ---
 
-## 📂 Projects Included
+# 📄 Dashboard Structure
 
-### 1️⃣ Sales Performance Dashboard
+## 1️⃣ Executive Overview
+
+This page provides a high-level business summary.
+
+### KPIs Included:
+- Total Sales
+- Total Profit
+- Profit Margin %
+- Sales Growth %
+- Total Quantity
+
+### Visuals:
+- Monthly Sales Trend
+- Sales Growth % by Category
+- Sales by Region & Category
+- Quantity by Category
+
+🎯 Purpose: Quick performance snapshot for management-level decision making.
+
+---
+
+## 2️⃣ Profitability Deep Dive
+
+This page focuses on profit analysis and margin behavior.
+
+### Analysis Includes:
+- Profit by Category
+- Profit by Sub-Category
+- Margin comparison
+- Loss-making segments identification
+
+🎯 Purpose: Identify high-margin and low-margin business areas.
+
+---
+
+## 3️⃣ Regional & Customer Insights
+
+This page analyzes geographical and customer-based performance.
+
+### Analysis Includes:
+- Region-wise Sales
+- Customer contribution
+- Segment-level comparison
+- Regional distribution trends
+
+🎯 Purpose: Understand revenue distribution and customer concentration.
+
+---
+
+# 🏗 Data Modeling
+
+- Fact Table: Orders
+- Dimension Table: Date Table
+- One-to-Many relationship (Date → Orders)
+- Single direction filtering
+- Star Schema structure
+
+---
+
+# 🗓 Custom Date Table
+
+```DAX
+Date Table =
+ADDCOLUMNS(
+    CALENDAR(MIN(Orders[Order Date]), MAX(Orders[Order Date])),
+    "Year", YEAR([Date]),
+    "Month", FORMAT([Date], "MMM"),
+    "Month No", MONTH([Date]),
+    "YearMonth", FORMAT([Date], "YYYY-MM")
+)
+```
+
+✔ Enables proper time intelligence  
+✔ Handles missing years safely  
+
+---
+
+# 📐 Core DAX Measures
+
+## Total Sales
+
+```DAX
+Total Sales =
+SUM(Orders[Sales])
+```
+
+## Sales Last Year
+
+```DAX
+Sales LY =
+CALCULATE(
+    [Total Sales],
+    DATEADD('Date Table'[Date], -1, YEAR)
+)
+```
+
+## Sales Growth %
+
+```DAX
+Sales Growth % =
+VAR CurrentSales = [Total Sales]
+VAR PreviousSales = [Sales LY]
+
+RETURN
+IF(
+    NOT ISBLANK(CurrentSales) &&
+    NOT ISBLANK(PreviousSales) &&
+    PreviousSales <> 0,
+    DIVIDE(CurrentSales - PreviousSales, PreviousSales)
+)
+```
+
+✔ Defensive logic applied  
+✔ Handles incomplete year comparisons  
+✔ Prevents misleading growth values  
+
+---
+
+# 🛡 Data Considerations
+
+The dataset contains missing transaction years (2020–2022).  
+Blank handling was intentionally implemented instead of forcing zero values to maintain analytical integrity.
+
+---
+
+# 🧠 Technical Skills Demonstrated
+
+- Star Schema Modeling
 - Time Intelligence (YoY Growth)
-- Custom Date Table
-- KPI Cards & Trend Analysis
-- Category & Regional Insights
-- Defensive DAX Logic
-
-📎 Folder: `/Sales-Performance-Dashboard`
+- Context Handling in DAX
+- Measure Branching
+- Defensive DAX Programming
+- Business-Oriented Dashboard Design
 
 ---
 
-## 🛠 Tools & Skills Demonstrated
+# 📁 Files Included
 
-- Power BI
-- DAX (CALCULATE, DATEADD, DIVIDE, Variables)
-- Star Schema Data Modeling
-- Time Intelligence
-- KPI Design
-- Interactive Reporting
+- Sample-Superstore.xlsx
+- Dashboard Screenshots
+- Data Model Screenshot
 
 ---
 
-More projects will be added soon.
+# 🚀 Conclusion
+
+This project demonstrates the ability to design a structured multi-page analytical dashboard, implement robust DAX calculations, and generate business-ready insights from transactional data.
