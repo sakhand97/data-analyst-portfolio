@@ -14,7 +14,7 @@ The dashboard is designed using proper data modeling and time intelligence techn
 # 📄 Dashboard Structure
 
 ## 1️⃣ Executive Overview
-![Executive Overview](EXECUTIVE OVERVIEW.png)
+![Executive Overview](EXECUTIVE%20OVERVIEW.png)
 This page provides a high-level business summary.
 
 ### KPIs Included:
@@ -35,7 +35,7 @@ This page provides a high-level business summary.
 ---
 
 ## 2️⃣ Profitability Deep Dive
-![Profitability Deep Dive](Profitability_Deep_Dive.png)
+![Profitability Deep Dive](PROFITABILITY%20DEEP%20DIVE.png)
 This page focuses on profit analysis and margin behavior.
 
 ### Analysis Includes:
@@ -49,7 +49,7 @@ This page focuses on profit analysis and margin behavior.
 ---
 
 ## 3️⃣ Regional & Customer Insights
-![Regional & Customer Insights](Regional_Insights.png)
+![Regional & Customer Insight](REGIONAL%20%26%20CUSTOMER%20INSIGHT.png)
 
 This page analyzes geographical and customer-based performance.
 
